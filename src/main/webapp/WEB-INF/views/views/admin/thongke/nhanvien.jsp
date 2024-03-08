@@ -77,7 +77,7 @@
                 function init() {
                 	var year = $("#year").val();
             		var month = $("#month").val();
-            		var url = 'http://localhost:8081/shopttcn/api/doanh-thu/nhan-vien';
+            		var url = 'http://localhost:8080/shopttcn/api/doanh-thu/nhan-vien';
             		if (year != '0' && month != '0') {
 						url += '/' + month + '/' + year;
 					}

@@ -133,7 +133,7 @@
 	showCat();
 	
 	async function showCat() {
-		let data = await fetch('http://localhost:8081/shopttcn/api/cat/list/parent/0').then(response => response.json());
+		let data = await fetch('http://localhost:8080/shopttcn/api/cat/list/parent/0').then(response => response.json());
 		var rs = '';
 		if (data.length > 0) {
 			for(let item of data){
@@ -147,7 +147,7 @@
 	async function multilevelCat(parentId) {
 		var kq = '';
 		try {
-			let data = await fetch('http://localhost:8081/shopttcn/api/cat/list/parent/'+parentId).then(response => response.json());
+			let data = await fetch('http://localhost:8080/shopttcn/api/cat/list/parent/'+parentId).then(response => response.json());
 			if (data.length > 0) {
 				kq += '<ul class="sub-menu">';
 				for(let item of data){

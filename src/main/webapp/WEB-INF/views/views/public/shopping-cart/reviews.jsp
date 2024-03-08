@@ -85,7 +85,7 @@
 					return;
 				}
 				alert('Cảm ơn bạn đã đánh giá sản phẩm!');
-				window.location.href = 'http://localhost:8081/shopttcn/don-hang/don-hang-'+orderId;
+				window.location.href = 'http://localhost:8080/shopttcn/don-hang/don-hang-'+orderId;
 			},
 			error: function (){
 				alert('Có lỗi xảy ra!');

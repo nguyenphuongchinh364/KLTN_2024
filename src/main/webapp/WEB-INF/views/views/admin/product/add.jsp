@@ -92,7 +92,7 @@
 	showCat();
 	
 	async function showCat() {
-		let data = await fetch('http://localhost:8081/shopttcn/api/cat/list/parent/0').then(response => response.json());
+		let data = await fetch('http://localhost:8080/shopttcn/api/cat/list/parent/0').then(response => response.json());
 		var catParentId = $("#cat-parent-id").html();
 		if (data.length > 0) {
 			var selected = '';
@@ -110,7 +110,7 @@
 	
 	async function multilevelCat(parentId,menu,catParentId) {
 		try {
-			let data = await fetch('http://localhost:8081/shopttcn/api/cat/list/parent/'+parentId).then(response => response.json());
+			let data = await fetch('http://localhost:8080/shopttcn/api/cat/list/parent/'+parentId).then(response => response.json());
 			if (data.length > 0) {
 				var selected = '';
 				for(let item of data){

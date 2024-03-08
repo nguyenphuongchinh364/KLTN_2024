@@ -65,7 +65,7 @@
                 
                 function init() {
                 	var year = $("#year").val();
-                	fetch('http://localhost:8081/shopttcn/api/doanh-thu/'+year).then(response => response.json()).then(data => {
+                	fetch('http://localhost:8080/shopttcn/api/doanh-thu/'+year).then(response => response.json()).then(data => {
                 		let input = [];
                 		for(let item of data){
                 			input.push([item.month , item.sales]);

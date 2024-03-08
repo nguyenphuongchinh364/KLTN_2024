@@ -139,10 +139,10 @@
   			</div>
 
 <script type="text/javascript">
-	fetch('http://localhost:8081/shopttcn/api/cat').then(response => response.json()).then(data => {
+	fetch('http://localhost:8080/shopttcn/api/cat').then(response => response.json()).then(data => {
 		for(let item of data){
 			if (item.catParentId != 0) {
-				fetch('http://localhost:8081/shopttcn/api/cat/parent/'+item.catParentId).then(response => response.json()).then(data => {
+				fetch('http://localhost:8080/shopttcn/api/cat/parent/'+item.catParentId).then(response => response.json()).then(data => {
 					$("#cat-parent-"+item.catId).html(data.catName);
 				});
 			} else {
