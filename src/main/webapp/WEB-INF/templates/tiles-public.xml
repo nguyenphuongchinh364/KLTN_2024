@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+  <definition name="template.public" template="/WEB-INF/views/templates/public/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/components/public/header.jsp" />
+    <put-attribute name="sidebar" value="/WEB-INF/views/components/public/sidebar.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/views/components/public/footer.jsp" />
+  </definition>
+  
+  <definition name="shop.index" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/index.jsp" />
+  </definition>
+
+  <definition name="shop.search" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/search.jsp" />
+    <put-attribute name="sidebar" value="/WEB-INF/views/components/public/sidebar-cat.jsp" />
+  </definition>
+
+  <definition name="shop.cat" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/cat.jsp" />
+    <put-attribute name="sidebar" value="/WEB-INF/views/components/public/sidebar-cat.jsp" />
+  </definition>
+
+  <definition name="shop.detail" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/detail.jsp" />
+  </definition>
+
+  <definition name="shop.cart" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/cart.jsp" />
+    <put-attribute name="sidebar" value="" />
+  </definition>
+
+  <definition name="shop.checkout" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/checkout.jsp" />
+    <put-attribute name="sidebar" value="" />
+  </definition>
+
+  <definition name="shop.order" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/order.jsp" />
+    <put-attribute name="sidebar" value="" />
+  </definition>
+
+  <definition name="shop.order.detail" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/order-detail.jsp" />
+    <put-attribute name="sidebar" value="" />
+  </definition>
+
+  <definition name="shop.reviews" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/reviews.jsp" />
+  </definition>
+
+  <definition name="shop.checkout.success" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/shopping-cart/checkout-success.jsp" />
+    <put-attribute name="sidebar" value="" />
+  </definition>
+  
+  <!-- AUTH -->
+  <definition name="shop.login" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/auth/login.jsp" />
+  </definition>
+
+  <definition name="shop.register" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/auth/register.jsp" />
+  </definition>
+
+  <!-- PROFILE -->
+  <definition name="shop.profile" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/profile/profile.jsp" />
+  </definition>
+
+  <definition name="shop.changePassword" extends="template.public" >
+    <put-attribute name="body" value="/WEB-INF/views/views/public/profile/change-password.jsp" />
+  </definition>
+</tiles-definitions>

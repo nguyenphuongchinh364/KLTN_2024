@@ -1,0 +1,69 @@
+/*MAIN CONTENT*/
+.returnOrderList{
+    height: 50px;
+    align-items: center;
+}
+.orderStatus{
+    padding: 40px 24px;
+    position: relative;
+}
+.stepper__step{
+    text-align: center;
+    width: 140px;
+}
+.stepper__step-text{
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.stepper__step-date{
+    color: rgba(0,0,0,.40);
+}
+.stepper__step-icon{
+    color: #2dc258;
+}
+.stepper__line {
+    position: absolute;
+    top: 70px;
+    height: 5px;
+    width: 100%;
+}
+.stepper__line-foreground {
+    background: #2dc258;
+}
+.stepper__line-background, .stepper__line-foreground {
+    position: absolute;
+    width: calc(100% - 230px);
+    margin: 0 100px;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.stepper__line-background {
+    background: #a1906d;
+}
+.unitPrice{
+    color: red;
+}
+.total{
+    background-color: #fafafa;
+    border-top: 1px solid rgba(0,0,0,.09);
+}
+.tableTotal{
+    padding: 0 24px;
+    align-items: center;
+    text-align: end;
+    border-bottom: 1px dotted rgba(0,0,0,.09);
+}
+.note{
+    padding: 13px 10px;
+    color: rgba(0,0,0,.54);
+    font-size: 14px;
+}
+.money{
+    padding: 13px 0 13px 10px;
+    width: 240px;
+    border-left: 1px dotted rgba(0,0,0,.09);
+    justify-content: flex-end;
+    word-wrap: break-word;
+    color: rgba(0,0,0,.8);
+}

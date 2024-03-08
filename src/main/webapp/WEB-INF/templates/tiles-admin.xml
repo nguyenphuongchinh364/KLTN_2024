@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+  <definition name="template.admin" template="/WEB-INF/views/templates/admin/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/components/admin/header.jsp" />
+    <put-attribute name="leftbar" value="/WEB-INF/views/components/admin/leftbar.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/views/components/admin/footer.jsp" />
+  </definition>
+  
+  <definition name="admin.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/index.jsp" />
+  </definition>
+  
+  <!-- category -->
+  <definition name="admin.cat.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/cat/index.jsp" />
+  </definition>
+
+  <definition name="admin.cat.add" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/cat/add.jsp" />
+  </definition>
+
+  <definition name="admin.cat.update" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/cat/update.jsp" />
+  </definition>
+
+  <!-- product -->
+  <definition name="admin.product.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/product/index.jsp" />
+  </definition>
+
+  <definition name="admin.product.add" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/product/add.jsp" />
+  </definition>
+
+  <definition name="admin.product.update" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/product/update.jsp" />
+  </definition>
+
+  <definition name="admin.product.picture" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/product/picture.jsp" />
+  </definition>
+
+  <!-- user -->
+  <definition name="admin.user.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/user/index.jsp" />
+  </definition>
+
+  <definition name="admin.user.add" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/user/add.jsp" />
+  </definition>
+  
+  <!-- order -->
+  <definition name="admin.order.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/order/index.jsp" />
+  </definition>
+
+  <definition name="admin.order.detail" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/order/detail.jsp" />
+  </definition>
+  
+  <!-- reviews -->
+  <definition name="admin.reviews.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/reviews/index.jsp" />
+  </definition>
+
+  <!-- thống kê doanh thu -->
+  <definition name="admin.thongke.index" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/thongke/index.jsp" />
+  </definition>
+  
+  <definition name="admin.thongke.nhanvien" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/thongke/nhanvien.jsp" />
+  </definition>
+
+  <!-- profile -->
+  <definition name="admin.profile" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/profile/profile.jsp" />
+  </definition>
+
+  <definition name="admin.profile.changePassword" extends="template.admin" >
+    <put-attribute name="body" value="/WEB-INF/views/views/admin/profile/change-password.jsp" />
+  </definition>
+</tiles-definitions>
