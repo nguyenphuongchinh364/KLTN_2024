@@ -6,8 +6,8 @@
    <div id="foot-body">
       <div class="wp-inner clearfix">
          <div class="block" id="info-company">
-            <h3 class="title">IT Shop</h3>
-            <p class="desc">Sản phẩm IT Shop cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu đãi cực lớn cho khách hàng có thẻ thành viên.</p>
+            <h3 class="title">G18 Shop</h3>
+            <p class="desc">Sản phẩm G18 Shop cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu đãi cực lớn cho khách hàng có thẻ thành viên.</p>
             <div id="payment">
                <div class="thumb">
                   <img class="img-fluid" src="${contextPath}/images/img-foot.png"  alt="">

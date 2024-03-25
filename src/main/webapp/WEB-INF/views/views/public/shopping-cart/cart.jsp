@@ -79,7 +79,7 @@
 		   <div class="section-detail">
 		      <p class=""><img class="img-fluid d-inline-block" src="${contextPath}/images/Shopping-Cart-Icon.png" alt="" style="width:75px;height:71px;"></p>
 		      <p class="" style="font-size: 16px;color: #4a4a4a;margin-bottom: 25px;">Không có sản phẩm nào trong giỏ hàng của bạn</p>
-		      <p class=""><a href="${urlIndex}" class="re_unimart" title="Trang chủ">ĐẾN TRANG CHỦ IT SHOP</a></p>
+		      <p class=""><a href="${urlIndex}" class="re_unimart" title="Trang chủ">ĐẾN TRANG CHỦ G18 Shop</a></p>
 		   </div>
 		</div>
 	</c:otherwise>

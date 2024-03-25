@@ -20,7 +20,7 @@
 	        <div class="row">
 	           <div class="col-md-5">
 	              <div class="logo">
-	                 <h1><a href="${urlAdminIndex}">IT Shop</a></h1>
+	                 <h1><a href="${urlAdminIndex}">G18 Shop</a></h1>
 	              </div>
 	           </div>
 	           <div class="col-md-3">

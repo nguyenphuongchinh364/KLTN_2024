@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>IT Shop</title>
+      <title>G18 Shop</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="csrf-token" content="MQvNURAHYs6BnyT3cZEgqS3R6UOVS2Fgej5FDo3E">
