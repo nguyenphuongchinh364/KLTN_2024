@@ -12,6 +12,7 @@ encoding//src/main/java/vn/shopttcn/controller/admin/AdminProfileController.java
 encoding//src/main/java/vn/shopttcn/controller/admin/AdminReviewsController.java=UTF-8
 encoding//src/main/java/vn/shopttcn/controller/admin/AdminUserController.java=UTF-8
 encoding//src/main/java/vn/shopttcn/controller/api/CategoryAPIController.java=UTF-8
+encoding//src/main/java/vn/shopttcn/controller/api/CallApi_RS.java=UTF-8
 encoding//src/main/java/vn/shopttcn/controller/auth/AuthController.java=UTF-8
 encoding//src/main/java/vn/shopttcn/controller/auth/ProfileController.java=UTF-8
 encoding//src/main/java/vn/shopttcn/controller/shop/IndexController.java=UTF-8

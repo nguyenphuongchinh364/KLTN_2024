@@ -1,5 +1,6 @@
 package vn.shopttcn.controller.shop;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -22,6 +23,7 @@ import com.google.gson.Gson;
 import vn.shopttcn.constant.GlobalConstant;
 import vn.shopttcn.constant.URLConstant;
 import vn.shopttcn.constant.ViewNameConstant;
+import vn.shopttcn.controller.api.CallApi_RS;
 import vn.shopttcn.model.Category;
 import vn.shopttcn.model.Product;
 import vn.shopttcn.model.ProductPicture;
@@ -60,13 +62,22 @@ public class IndexController {
 
 	@ModelAttribute
 	public void saveData(Model model) {
-		model.addAttribute("listBestSell", productService.getBestSellProduct(GlobalConstant.DELETE_STATUS_0));
+		model.addAttribute("listBestSell", productService.getBestSellProduct(GlobalConstant.DELETE_STATUS_0));	
+		
 	}
 
 	@GetMapping({ URLConstant.INDEX, GlobalConstant.EMPTY })
-	public String index(Model model) {
+	public String index(Model model, HttpSession session) throws IOException {
 		List<Category> listCatParent = categoryService.findCatByParentId(0, GlobalConstant.DELETE_STATUS_0);
 		model.addAttribute("listCatParent", listCatParent);
+		List<Product> listProductRS = new ArrayList<Product>();
+		listProductRS = null;
+		User userLogin = (User) session.getAttribute("userLogin");
+		if (userLogin != null) {
+			int userId = userLogin.getUserId();
+			ArrayList<String> itemsId = CallApi_RS.CallApi(userId);
+			listProductRS = productService.getProductRS(GlobalConstant.DELETE_STATUS_0, itemsId);
+		}
 		List<Product> listProduct = new ArrayList<Product>();
 		if (listCatParent.size() > 0) {
 			for (Category category : listCatParent) {
@@ -79,6 +90,7 @@ public class IndexController {
 			}
 		}
 		model.addAttribute("listProduct", listProduct);
+		model.addAttribute("listProductRS",listProductRS);
 		return ViewNameConstant.INDEX;
 	}
 

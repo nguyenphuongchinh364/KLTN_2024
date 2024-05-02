@@ -3,10 +3,15 @@ package vn.shopttcn.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import vn.shopttcn.constant.GlobalConstant;
@@ -251,6 +256,63 @@ public class ProductDAO extends AbstractDAO<Product> {
 		}, deleteStatus);
 	}
 
+	//
+
+	// Lấy sản phẩm theo danh sách gợi ý được trả về từ api
+
+	public List<Product> getProductRS(int deleteStatus, ArrayList<String> itemsId) {
+		/*
+		 * System.out.println("Good morning"+itemsId.size()); ArrayList<String> items =
+		 * new ArrayList<String>(); items.add("3"); items.add("4"); items.add("5");
+		 */
+
+		ArrayList<String> itemsRS_DEM = new ArrayList<String>();
+		if(itemsId==null)
+		{
+			return null;
+		}
+		for (int i = 0; i < itemsId.size(); i++) {
+			itemsRS_DEM.add(String.valueOf(itemsId.get(i)));
+		}
+
+		String inParams = String.join(",", itemsRS_DEM.stream().map(id -> id + "").collect(Collectors.toList()));
+		String sql = String.format(
+				"SELECT * FROM product p INNER JOIN product_cat c ON p.catId = c.catId WHERE p.deleteStatus = ? AND p.productId IN (%s)",
+				inParams);
+		System.out.println(sql);
+		// String sql1= "SELECT * FROM product p INNER JOIN product_cat c ON p.catId =
+		// c.catId WHERE p.deleteStatus = ? AND p.productId IN (1,2,3)";
+
+		if (itemsRS_DEM.isEmpty())
+		{
+			System.out.println("Khong co ds sp goi y");
+
+		}
+		else
+		{
+			return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+				List<Product> list = new ArrayList<Product>();
+
+				@Override
+				public List<Product> extractData(ResultSet rs) throws SQLException, DataAccessException {
+					while (rs.next()) {
+						list.add(new Product(rs.getInt("productId"),
+								new Category(rs.getInt("c.catId"), rs.getString("catName"), rs.getString("catSlug"),
+										rs.getInt("catParentId"), rs.getTimestamp("c.createAt"),
+										rs.getTimestamp("c.updateAt")),
+								rs.getString("productName"), rs.getString("productSlug"), rs.getString("productImage"),
+								rs.getString("productDesc"), rs.getString("productDetail"), rs.getInt("productPrice"),
+								rs.getInt("productQuantity"), rs.getInt("productSold"), rs.getInt("productView"),
+								rs.getInt("p.deleteStatus"), rs.getTimestamp("p.createAt"), rs.getTimestamp("p.updateAt")));
+					}
+					return list;
+				}
+			}, deleteStatus);
+		}
+		return null;
+	}
+
+	//
 	// product relate (cùng category)
 	public List<Product> getProductRelate(List<Integer> catIdList, int productId, int deleteStatus) {
 		List<Object> list = new ArrayList<Object>();

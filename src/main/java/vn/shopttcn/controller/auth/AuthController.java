@@ -1,5 +1,8 @@
 package vn.shopttcn.controller.auth;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.ServletContext;
@@ -23,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vn.shopttcn.constant.GlobalConstant;
 import vn.shopttcn.constant.URLConstant;
 import vn.shopttcn.constant.ViewNameConstant;
+import vn.shopttcn.controller.api.CallApi_RS;
 import vn.shopttcn.model.Address;
 import vn.shopttcn.model.Role;
 import vn.shopttcn.model.User;
@@ -38,6 +42,7 @@ import vn.shopttcn.validate.UserValidate;
 
 @Controller
 public class AuthController {
+	
 
 	@Autowired
 	private MessageSource messageSource;
@@ -104,9 +109,10 @@ public class AuthController {
 			return "redirect:/" + URLConstant.LOGIN;
 		}
 		session.setAttribute("userLogin", user); // login success
+		
 		return "redirect:/" + URLConstant.INDEX;
 	}
-
+	
 	@GetMapping(URLConstant.LOGOUT)
 	public String logout(HttpSession session) {
 		session.removeAttribute("userLogin");

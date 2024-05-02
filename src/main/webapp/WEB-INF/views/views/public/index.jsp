@@ -1,4 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/components/taglib.jsp"%>
 <div class="main-content fl-right">
@@ -80,6 +81,47 @@
 			</div>
 		</c:if>
 	</div>
+
+	<div class="section" id="feature-product-wp"
+		style="margin-bottom: 50px;">
+		<div class="section-head">
+			<h3 class="section-title">Sản phẩm bạn có thể thích (Trang web
+				gợi ý cho bạn)</h3>
+		</div>
+		<c:choose>
+			<c:when test="${not empty userLogin}">
+				<h2>Chào, ${userLogin.userFullname}</h2>
+				<p>Sau đây là một số sản phẩm được gợi ý riêng cho bạn</p>
+				<br />
+				<!-- Danh sách sản phẩm được gợi ý cho từng user -->
+				<c:if test="${not empty listProductRS}">
+					<div class="section-detail">
+						<ul class="list-item clearfix">
+							<c:forEach items="${listProductRS}" var="product">
+								<li><a
+									href="${urlDetail}/${product.cat.catSlug}/${product.productSlug}-${product.productId}"
+									title="" class="thumb"> <img
+										src="${pictureContextPath}/product/${product.productImage}">
+								</a> <a
+									href="${urlDetail}/${product.cat.catSlug}/${product.productSlug}-${product.productId}"
+									title="" class="product-name">${product.productName}</a>
+									<div class="price text-left">
+										<span class="new">${stringUtil.beautifulPrice(product.productPrice)}đ</span>
+									</div></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</c:if>
+
+			</c:when>
+			<c:otherwise>
+				<li><a href="${urlLogin}" title="">Bạn cần Đăng nhập để có
+						thể nhận được sự gợi ý từ Website, nếu chưa có tài khoản hãy Đăng
+						ký</a></li>
+			</c:otherwise>
+		</c:choose>
+	</div>
+
 	<c:if test="${not empty listCatParent}">
 		<c:set value="0" var="catQuantity"></c:set>
 		<c:forEach items="${listCatParent}" var="catParent">

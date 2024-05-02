@@ -1,5 +1,6 @@
 package vn.shopttcn.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,11 @@ public class ProductService implements CRUDService<Product> {
 	public List<Product> getBestSellProduct(int deleteStatus) {
 		return productDAO.getBestSellProduct(deleteStatus);
 	}
+	
+	public List<Product> getProductRS( int deleteStatus, ArrayList<String> itemsId) {
+		return productDAO.getProductRS(deleteStatus, itemsId);
+		
+	}
 
 	public List<Product> getProductRelate(List<Integer> catIdList, int productId, int deleteStatus) {
 		return productDAO.getProductRelate(catIdList, productId, deleteStatus);
@@ -107,5 +113,7 @@ public class ProductService implements CRUDService<Product> {
 	public List<Product> filter(String keyword, List<Integer> listCatId, int minPrice, int maxPrice) {
 		return productDAO.filter(keyword, listCatId, minPrice, maxPrice);
 	}
+
+	
 
 }
