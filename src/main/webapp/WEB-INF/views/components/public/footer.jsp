@@ -53,7 +53,7 @@
    </div>
    <div id="foot-bot">
       <div class="wp-inner">
-         <p id="copyright">Thanks for template by unitop.vn | PHP Master</p>
+         <p id="copyright">Thanks for watching</p>
       </div>
    </div>
 </div>
