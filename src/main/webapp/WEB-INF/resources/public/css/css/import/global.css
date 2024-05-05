@@ -24,12 +24,12 @@ img{
 .fl-left{ float: left;}
 .fl-right{ float: right;}
 #logo>img {
-	height: 52px !important;
+    height: 52px !important;
     width: 228px !important;
     margin-left: 20px;
 }
 #head-body #search-wp {
-	padding: 22px 0px 22px 100px !important;
+    padding: 22px 0px 22px 100px !important;
 }
 #btn-top{
     position: fixed;
