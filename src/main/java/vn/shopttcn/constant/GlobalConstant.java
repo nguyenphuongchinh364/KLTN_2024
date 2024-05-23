@@ -13,7 +13,7 @@ public class GlobalConstant {
 
 	public static final int DEFAULT_PAGE = 1;
 
-	public static final int MAX_PICTURE_QUANTITY = 20;
+	public static final int MAX_PICTURE_QUANTITY = 5;
 
 	public static final int SHIP = 30000;
 
